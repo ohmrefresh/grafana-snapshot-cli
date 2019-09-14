@@ -1,1 +1,3 @@
 grafana-snapshot
+pytest
+coverage
