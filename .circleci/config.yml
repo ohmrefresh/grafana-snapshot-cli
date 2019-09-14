@@ -44,21 +44,13 @@ jobs:
       # other common Python testing frameworks include pytest and nose
       # https://pytest.org
       # https://nose.readthedocs.io
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            pytest test
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
 
       - run:
           name: Run Tests
           command: |
             $HOME/.local/bin/coverage run -m pytest
             $HOME/.local/bin/coverage report
-            $HOME/.local/bin/coverage html  # open htmlcov/index.html in a browser
+            $HOME/.local/bin/coverage html
 
       - store_artifacts:
           path: htmlcov
